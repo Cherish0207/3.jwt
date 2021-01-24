@@ -1,13 +1,28 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Home</router-link> | <router-link to="/login">Login</router-link> |
+      <router-link to="/profile">Profile</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
+<script>
+import { getTest, getTest1 } from "./api/index";
+export default {
+  name: "app",
+  mounted() {
+    getTest().then(data => {
+      // console.log(data);
+    });
+    // /test1 请求也会被拦截
+    getTest1().then(data => {
+      console.log(data);
+    });
+  }
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
