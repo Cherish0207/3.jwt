@@ -1,16 +1,11 @@
 import http from '../lib/http'
 export const getTest = () => {
-  http.interceptors.request.use(config => {
-    console.log(config);
-    console.log(3);
-    return config;
-  });
-  return http({
+  return http.request({
     url: '/test'
   })
 }
 export const getTest1 = () => {
-  return http({
+  return http.request({
     url: '/test1'
   })
 }

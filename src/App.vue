@@ -14,9 +14,8 @@ export default {
   name: "app",
   mounted() {
     getTest().then(data => {
-      // console.log(data);
+      console.log(data);
     });
-    // /test1 请求也会被拦截
     getTest1().then(data => {
       console.log(data);
     });
